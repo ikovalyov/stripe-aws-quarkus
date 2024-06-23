@@ -137,7 +137,7 @@ public class StripeResource {
         // Set your secret key. Remember to switch to your live secret key in production.
         // See your keys here: https://dashboard.stripe.com/apikeys
         CompletableFuture<String> stripeApiKeyFuture = secrets.getStripeApiKey();
-        CompletableFuture<String> stripeServiceRootUrlFuture = secrets.getStripeStaticRootPath();
+        CompletableFuture<String> stripeServiceRootUrlFuture = secrets.getStripeServiceRootUrl();
         String stripeApiKey = stripeApiKeyFuture.get();
         String stripeServiceRootUrl = stripeServiceRootUrlFuture.get();
         StripeClient client = new StripeClient(stripeApiKey);
